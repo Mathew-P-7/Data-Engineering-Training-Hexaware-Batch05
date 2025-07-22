@@ -1,4 +1,4 @@
-//MongoDB Assignment 01 - Retail Store Inventory & Sales
+//MongoDB Assignment 03 - Retail Store Inventory & Sales
 
 use assignment3DB
 
