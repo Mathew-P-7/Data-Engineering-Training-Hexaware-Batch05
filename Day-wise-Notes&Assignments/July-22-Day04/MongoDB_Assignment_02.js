@@ -1,6 +1,6 @@
 //MongoDB Assignment 02 – Movie Streaming App
 
-use("MoviestreamingDB");
+use assignment2DB
 
 //PART 1: Create Collections
 //users
@@ -10,7 +10,7 @@ db.users.insertMany([
   { user_id: 2, name: "emma", email: "emma@example.com", country: "usa" },
   { user_id: 3, name: "li", email: "li@example.com", country: "china" },
   { user_id: 4, name: "kumar", email: "kumar@example.com", country: "india" },
-  { user_id: 5, name: "sofia", email: "sofia@example.com", country: "france" },
+  { user_id: 5, name: "sofia", email: "sofia@example.com", country: "france" }
 
 ]);
 
