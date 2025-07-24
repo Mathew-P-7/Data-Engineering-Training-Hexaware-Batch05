@@ -1,0 +1,54 @@
+27017> use CourseTracker;
+switched to db CourseTracker
+CourseTracker> db.feedback.insertMany([
+...   {
+...     student_id: 1,
+...     course_id: 101,
+...     rating: 4.5,
+...     comment: "Great intro course!",
+...     submitted_on: ISODate("2025-06-01")
+...   },
+...   {
+...     student_id: 2,
+...     course_id: 103,
+...     rating: 4.0,
+...     comment: "Clear and well-structured.",
+...     submitted_on: ISODate("2025-06-01")
+...   },
+...   {
+...     student_id: 3,
+...     course_id: 104,
+...     rating: 3.5,
+...     comment: "Too fast-paced for beginners.",
+...     submitted_on: ISODate("2025-06-02")
+...   },
+...   {
+...     student_id: 4,
+...     course_id: 105,
+...     rating: 5.0,
+...     comment: "Loved the hands-on examples!",
+...     submitted_on: ISODate("2025-06-02")
+...   },
+...   {
+...     student_id: 5,
+...     course_id: 106,
+...     rating: 3.8,
+...     comment: "Good, but could include more exercises.",
+...     submitted_on: ISODate("2025-06-03")
+...   }
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('683d3fdd4a4729c4286c4bd0'),
+    '1': ObjectId('683d3fdd4a4729c4286c4bd1'),
+    '2': ObjectId('683d3fdd4a4729c4286c4bd2'),
+    '3': ObjectId('683d3fdd4a4729c4286c4bd3'),
+    '4': ObjectId('683d3fdd4a4729c4286c4bd4')
+  }
+}
+CourseTracker> db.feedback.createIndex({ student_id: 1 });
+student_id_1
+CourseTracker> db.feedback.createIndex({ course_id: 1 });
+course_id_1
+
