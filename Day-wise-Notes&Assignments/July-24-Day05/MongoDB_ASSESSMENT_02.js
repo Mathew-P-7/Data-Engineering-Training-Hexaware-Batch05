@@ -84,143 +84,138 @@ $lookup: {
       "member.name": 1
     }
   }
-]);
+])
 
 //7. Find which member borrowed "Sapiens".
 db.borrowed.aggregate([
-  {
-    $lookup: {
+{
+$lookup: {
       from: "books",
       localField: "book_id",
       foreignField: "book_id",
       as: "book"
-    }
-  },
-  {
-    $lookup: {
+}
+},
+{
+$lookup: {
       from: "members",
       localField: "member_id",
       foreignField: "member_id",
       as: "member"
-    }
-  },
-  {
-    $match: {
-      "book.title": "Sapiens"
-    }
-  },
-  {
-    $project: {
+}
+},
+{
+$match: {"book.title": "Sapiens"}
+},
+{
+$project: {
       "member.name": 1
-    }
-  }
-]);
+}
+}
+])
 
 //8. Display all members along with the books they've borrowed.
 db.members.aggregate([
-  {
-    $lookup: {
+{
+$lookup: {
       from: "borrowed",
       localField: "member_id",
       foreignField: "member_id",
       as: "borrowed_books"
-    }
-  },
-  {
-    $lookup: {
+}
+},
+{
+$lookup: {
       from: "books",
       localField: "borrowed_books.book_id",
       foreignField: "book_id",
       as: "books"
-    }
-  }
-]);
+}
+}
+])
 
 //9. Get a list of members who have borrowed books and not returned them.
-db.members.aggregate([
-  {
-    $lookup: {
-      from: "borrowed",
+db.borrowed.aggregate([
+{ 
+$match: { returned: false } 
+},
+{
+$lookup: {
+      from: "members",
       localField: "member_id",
       foreignField: "member_id",
-      as: "borrowed_books",
-      pipeline: [
-        {
-          $match: {
-            returned: false
-          }
-        }
-      ]
-    }
-  },
-  {
-    $match: {
-      "borrowed_books.0": { $exists: true }
-    }
-  }
-]);
+      as: "member"
+}
+},
+{ $unwind: "$member" },
+{
+$project: { 
+      member_name: "$member.name",
+      _id: 0 } 
+}
+])
 
 //10. Show each book along with how many times it has been borrowed.
 db.books.aggregate([
-  {
-    $lookup: {
+{
+$lookup: {
       from: "borrowed",
       localField: "book_id",
       foreignField: "book_id",
       as: "borrow_records"
-    }
-  },
-  {
-    $project: {
+}
+},
+{
+$project: {
       title: 1,
       borrow_count: { $size: "$borrow_records" }
-    }
-  }
-]);
+}
+}
+])
 
 
 //Aggregation & Analysis
 //11. Count how many books each member has borrowed.
 db.borrowed.aggregate([
-  {
-    $group: {
+{
+$group: {
       _id: "$member_id",
       total_borrowed: { $sum: 1 }
-    }
-  },
-  {
-    $lookup: {
+}
+},
+{
+$lookup: {
       from: "members",
       localField: "_id",
       foreignField: "member_id",
       as: "member"
-    }
-  },
-  {
-    $project: {
+}
+},
+{
+$project: {
       "member.name": 1,
       total_borrowed: 1
-    }
-  }
-]);
+}
+}
+])
 
 //12. Which genre has the highest number of books?
 db.books.aggregate([
-  {
-    $group: {
+{
+$group: {
       _id: "$genre",
       total_copies: { $sum: "$copies" }
-    }
-  },
-  {
-    $sort: {
+}
+},
+{
+$sort: {
       total_copies: -1
-    }
-  },
-  {
-    $limit: 1
-  }
-]);
+}
+},
+{
+$limit: 1
+}
+])
 
 //13. List the top 2 most borrowed books.
 db.borrowed.aggregate([
@@ -252,7 +247,7 @@ db.borrowed.aggregate([
       borrow_count: 1
     }
   }
-]);
+])
 
 //14. Show the average number of copies available per genre.
 db.books.aggregate([
@@ -277,7 +272,7 @@ db.members.insertOne({
   member_id: 104,
   name: "Priya Patel",
   joined_on: new Date("2024-05-01")
-});
+})
 
 // Finding members who haven't borrowed any books
 db.members.aggregate([
@@ -294,7 +289,7 @@ db.members.aggregate([
       borrowed_books: { $size: 0 }
     }
   }
-]);
+])
 
 //17. Identify books that have never been borrowed.
 db.books.aggregate([
@@ -311,7 +306,7 @@ db.books.aggregate([
       borrow_records: { $size: 0 }
     }
   }
-]);
+])
 
 //18. Get the name of members who borrowed more than one book.
 db.borrowed.aggregate([
@@ -340,7 +335,7 @@ db.borrowed.aggregate([
       borrow_count: 1
     }
   }
-]);
+])
 
 //19. Display borrowing trends by month (group by date ).
 db.borrowed.aggregate([
@@ -359,7 +354,7 @@ db.borrowed.aggregate([
       "_id.month": 1
     }
   }
-]);
+])
 
 //20. Show borrow records where the borrowed book had fewer than 5 copies at the time of borrowing.
 db.borrowed.aggregate([
