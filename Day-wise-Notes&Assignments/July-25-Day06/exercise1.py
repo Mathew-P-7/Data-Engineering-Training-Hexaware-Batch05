@@ -1,9 +1,4 @@
-# 1. FizzBuzz Challenge
-# Print numbers from 1 to 50:
-# If divisible by 3, print "Fizz"
-# If divisible by 5, print "Buzz"
-# If divisible by both, print "FizzBuzz"
-# Else, print the number
+
 def fizzBuzz():
     for i in range(1,51):
         if i % 3 == 0 and i % 5 == 0:
