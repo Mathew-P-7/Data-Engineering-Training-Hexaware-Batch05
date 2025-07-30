@@ -1,6 +1,0 @@
-_id,student_id,course_id,rating,comment,submitted_on
-683d3fdd4a4729c4286c4bd0,1,101,4.5,Great intro course!,2025-06-01T00:00:00.000Z
-683d3fdd4a4729c4286c4bd1,2,103,4,Clear and well-structured.,2025-06-01T00:00:00.000Z
-683d3fdd4a4729c4286c4bd2,3,104,3.5,Too fast-paced for beginners.,2025-06-02T00:00:00.000Z
-683d3fdd4a4729c4286c4bd3,4,105,5,Loved the hands-on examples!,2025-06-02T00:00:00.000Z
-683d3fdd4a4729c4286c4bd4,5,106,3.8,"Good, but could include more exercises.",2025-06-03T00:00:00.000Z
