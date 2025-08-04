@@ -1,0 +1,6 @@
+warehouse_id,name,location,current_stock,capacity,usuage_percent,status
+201,North Distribution Center,"Chicago, IL",7500,10000,75.0,OVERSTOCKED
+202,West Coast Hub,"Los Angeles, CA",3900,15000,26.0,UNDERSTOCKED
+203,East Regional,"New York, NY",8700,8000,108.75,OVERSTOCKED
+204,South Central,"Dallas, TX",40100,12000,334.17,OVERSTOCKED
+205,Midwest Storage,"Kansas City, MO",4200,9000,46.67,NORMAL
