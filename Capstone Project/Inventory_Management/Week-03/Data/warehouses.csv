@@ -1,0 +1,11 @@
+"warehouse_id","name","location","capacity"
+201,"North Distribution Center","Chicago, IL",10000
+202,"West Coast Hub","Los Angeles, CA",15000
+203,"East Regional","New York, NY",8000
+204,"South Central","Dallas, TX",12000
+205,"Midwest Storage","Kansas City, MO",9000
+206,"Pacific Northwest","Seattle, WA",7000
+207,"Northeast Storage","Boston, MA",6000
+208,"Southeast Hub","Atlanta, GA",11000
+209,"Rocky Mountain","Denver, CO",5000
+210,"Southwest Regional","Phoenix, AZ",7500
