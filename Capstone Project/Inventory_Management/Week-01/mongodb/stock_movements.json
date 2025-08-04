@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "6890b6b44e6add5904dbf432"
+  },
+  "movement_id": 101,
+  "product_id": 1,
+  "warehouse_id": 1,
+  "supplier": "ABC Suppliers",
+  "quantity": 20,
+  "movement_type": "IN",
+  "movement_date": {
+    "$date": "2025-08-01T09:00:00.000Z"
+  },
+  "reason": "Initial stock from supplier"
+},
+{
+  "_id": {
+    "$oid": "6890b6b44e6add5904dbf433"
+  },
+  "movement_id": 102,
+  "product_id": 2,
+  "warehouse_id": 1,
+  "supplier": "Global Traders",
+  "quantity": -5,
+  "movement_type": "OUT",
+  "movement_date": {
+    "$date": "2025-08-01T11:30:00.000Z"
+  },
+  "reason": "Damaged goods removed"
+},
+{
+  "_id": {
+    "$oid": "6890b6b44e6add5904dbf434"
+  },
+  "movement_id": 103,
+  "product_id": 3,
+  "warehouse_id": 2,
+  "supplier": "SupplyCo Ltd",
+  "quantity": 15,
+  "movement_type": "IN",
+  "movement_date": {
+    "$date": "2025-08-02T10:00:00.000Z"
+  },
+  "reason": "Restocked after low inventory alert"
+},
+{
+  "_id": {
+    "$oid": "6890b6b44e6add5904dbf435"
+  },
+  "movement_id": 104,
+  "product_id": 4,
+  "warehouse_id": 3,
+  "supplier": "XYZ Traders",
+  "quantity": -3,
+  "movement_type": "OUT",
+  "movement_date": {
+    "$date": "2025-08-03T14:45:00.000Z"
+  },
+  "reason": "Stock moved to another warehouse"
+},
+{
+  "_id": {
+    "$oid": "6890b6b44e6add5904dbf436"
+  },
+  "movement_id": 105,
+  "product_id": 5,
+  "warehouse_id": 2,
+  "supplier": "WarehouseOps",
+  "quantity": 10,
+  "movement_type": "IN",
+  "movement_date": {
+    "$date": "2025-08-03T16:15:00.000Z"
+  },
+  "reason": "Returned items added back to stock"
+},
+{
+  "_id": {
+    "$oid": "6890b6b44e6add5904dbf437"
+  },
+  "movement_id": 106,
+  "product_id": 6,
+  "warehouse_id": 4,
+  "supplier": "TechLine Distributors",
+  "quantity": -7,
+  "movement_type": "OUT",
+  "movement_date": {
+    "$date": "2025-08-04T09:00:00.000Z"
+  },
+  "reason": "Shipped for urgent order"
+},
+{
+  "_id": {
+    "$oid": "6890b6b44e6add5904dbf438"
+  },
+  "movement_id": 107,
+  "product_id": 1,
+  "warehouse_id": 1,
+  "supplier": "ABC Suppliers",
+  "quantity": 5,
+  "movement_type": "IN",
+  "movement_date": {
+    "$date": "2025-08-04T10:30:00.000Z"
+  },
+  "reason": "Top-up due to fast-moving item"
+}]
