@@ -1,0 +1,11 @@
+movement_id,product_id,warehouse_id,quantity,movement_type,movement_date,reference_number,reason,net_quantity
+401,101,201,15,IN,2025-01-05 09:15:00,PO-1001,Initial stock,15
+402,102,202,50,IN,2025-01-05 10:30:00,PO-1002,Bulk order,50
+403,103,203,30,IN,2025-01-06 11:45:00,PO-1003,Quarterly restock,30
+404,104,204,25,IN,2025-01-06 14:20:00,PO-1004,New product line,25
+405,105,205,18,IN,2025-01-07 08:10:00,PO-1005,Pre-holiday stock,18
+411,101,201,5,OUT,2025-01-12 11:20:00,SO-2001,Customer order #1001,-5
+412,102,202,10,OUT,2025-01-13 14:35:00,SO-2002,Store transfer,-10
+413,103,203,8,OUT,2025-01-14 10:10:00,Not Applicable,Damaged goods return,-8
+414,104,204,3,OUT,2025-01-15 15:45:00,SO-2004,Not Specified,-3
+416,101,201,10,IN,2025-08-04 18:24:50,Not Applicable,Initial stock,10

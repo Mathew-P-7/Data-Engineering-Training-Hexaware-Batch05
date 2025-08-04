@@ -1,0 +1,6 @@
+product_id,current_stock,reorder_level,low_stock
+101,20,20,False
+102,40,25,False
+103,22,30,True
+104,22,15,False
+105,18,10,False
